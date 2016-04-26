@@ -1,0 +1,118 @@
+/**
+ *    .             .                   .
+ *  ,-| ,-. ,-. ,-. |-. ,-. ,-. . ,   ,-| . ,
+ *  | | |   ,-| `-. | | |-' |   |/ ,. | | |/
+ *  `-' '   `-^ `-' `-' `-' `-' |\ `´ `-' |\  (cc by-sa) 2015
+ *                              ' `       ' `
+ */
+
+body {
+    font-size: 1.2em;
+    line-height: 1.125em;
+}
+
+.bodyText p {
+    color: dimgray;
+    font-family: 'Varela Round', serif;
+    font-size: 0.875em;
+    font-weight: 400;
+}
+
+.bodyText h1 {
+    color: dimgray;
+    font-family: 'Varela Round', serif;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.bodyText h1 span {
+    color: #ef5f40;
+}
+
+select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+
+
+.buttonStyle {
+    -webkit-appearance: none;
+    background-color: #272822;
+    border: 1px solid dimgray;
+    display: inline-block;
+    color: dimgray;
+    font-family: 'Varela Round', serif;
+    font-size: 1em;
+    font-weight: 900;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+.buttonStyle:hover {
+    background-color: #20211c;
+}
+
+.buttonStyle:active {
+    position: relative;
+    top: 1px;
+}
+
+.buttonStyle:disabled {
+    position: relative;
+    top: 1px;
+    color: #404040;
+    background-color: #272822;
+    border: 1px solid #404040;
+}
+
+
+.selectStyle {
+    border: 1px solid dimgray;
+    display: inline-block;
+    width: auto;
+    overflow: hidden;
+    background-color: #272822;
+    font-family: 'Varela Round', serif;
+    color: dimgray;
+    font-weight: 900;
+    font-size: 1em;
+    padding: 6px 12px;
+}
+
+.selectStyle:hover {
+    background-color: #20211c;
+}
+
+.selectStyle select {
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+}
+
+.selectStyle select:focus {
+    outline: none;
+}
+
+#progressBar {
+    width: auto;
+    height: 50px;
+    border: 1px solid dimgray;
+    overflow: hidden;
+}
+
+#progressBarProgress {
+    width: 0;
+    height: 50px;
+    background: #be4b34;
+}
+
+#progressFont {
+    color: whitesmoke;
+    font-size: 40px;
+    font-family: 'Varela Round', serif;
+    font-weight: 300;
+    text-shadow: 0px 1px 0px #323232;
+    position: relative;
+    top: -31px;}

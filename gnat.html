@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--
+      .             .                   .
+    ,-| ,-. ,-. ,-. |-. ,-. ,-. . ,   ,-| . ,
+    | | |   ,-| `-. | | |-' |   |/ ,. | | |/
+    `-' '   `-^ `-' `-' `-' `-' |\ `´ `-' |\  (cc by-sa) 2015
+                                ' `       ' `
+-->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="drasbeck.dk">
+    <meta name="author" content="drasbeck.dk">
+
+    <title>GNAT Not Any Timer - DRSBCK IxD</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round:400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="../css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/creative.css" type="text/css">
+    <link rel="stylesheet" href="../css/custom.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="page-top" onload="timer(); setInterval('timer()', 20); drawSlider(100, 0);">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="../index.html#page-top">DRSBCK IxD</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="../index.html#workDrop">Work</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="../index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="../index.html#about">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<header id="header">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <div class="bodyText">
+                <script src="script.js"></script>
+
+                <h1>
+                    G<span>NAT</span> Not Any Timer
+                </h1>
+
+                <h1>&nbsp;</h1>
+
+                <p>
+                    Set timer for:&nbsp;&nbsp;
+                    <select id="hotels" class="selectStyle">
+                        <option value="0">00h</option>
+                        <option value="1">01h</option>
+                        <option value="2">02h</option>
+                        <option value="3">03h</option>
+                        <option value="4">04h</option>
+                        <option value="5">05h</option>
+                        <option value="6">06h</option>
+                        <option value="7">07h</option>
+                        <option value="8">08h</option>
+                        <option value="9">09h</option>
+                        <option value="10">10h</option>
+                        <option value="11">11h</option>
+                        <option value="12">12h</option>
+                        <option value="13">13h</option>
+                        <option value="14">14h</option>
+                        <option value="15">15h</option>
+                        <option value="16">16h</option>
+                        <option value="17">17h</option>
+                        <option value="18">18h</option>
+                        <option value="19">19h</option>
+                        <option value="20">20h</option>
+                        <option value="21">21h</option>
+                        <option value="22">22h</option>
+                        <option value="23">23h</option>
+                    </select>
+                    <select id="mikes" class="selectStyle">
+                        <option value="0">00m</option>
+                        <option value="1">01m</option>
+                        <option value="2">02m</option>
+                        <option value="3">03m</option>
+                        <option value="4">04m</option>
+                        <option value="5">05m</option>
+                        <option value="6">06m</option>
+                        <option value="7">07m</option>
+                        <option value="8">08m</option>
+                        <option value="9">09m</option>
+                        <option value="10">10m</option>
+                        <option value="11">11m</option>
+                        <option value="12">12m</option>
+                        <option value="13">13m</option>
+                        <option value="14">14m</option>
+                        <option value="15">15m</option>
+                        <option value="16">16m</option>
+                        <option value="17">17m</option>
+                        <option value="18">18m</option>
+                        <option value="19">19m</option>
+                        <option value="20">20m</option>
+                        <option value="21">21m</option>
+                        <option value="22">22m</option>
+                        <option value="23">23m</option>
+                        <option value="24">24m</option>
+                        <option value="25">25m</option>
+                        <option value="26">26m</option>
+                        <option value="27">27m</option>
+                        <option value="28">28m</option>
+                        <option value="29">29m</option>
+                        <option value="30">30m</option>
+                        <option value="31">31m</option>
+                        <option value="32">32m</option>
+                        <option value="33">33m</option>
+                        <option value="34">34m</option>
+                        <option value="35">35m</option>
+                        <option value="36">36m</option>
+                        <option value="37">37m</option>
+                        <option value="38">38m</option>
+                        <option value="39">39m</option>
+                        <option value="40">40m</option>
+                        <option value="41">41m</option>
+                        <option value="42">42m</option>
+                        <option value="43">43m</option>
+                        <option value="44">44m</option>
+                        <option value="45">45m</option>
+                        <option value="46">46m</option>
+                        <option value="47">47m</option>
+                        <option value="48">48m</option>
+                        <option value="49">49m</option>
+                        <option value="50">50m</option>
+                        <option value="51">51m</option>
+                        <option value="52">52m</option>
+                        <option value="53">53m</option>
+                        <option value="54">54m</option>
+                        <option value="55">55m</option>
+                        <option value="56">56m</option>
+                        <option value="57">57m</option>
+                        <option value="58">58m</option>
+                        <option value="59">59m</option>
+                    </select>
+                    <select id="sierras" class="selectStyle">
+                        <option value="0">00s</option>
+                        <option value="1">01s</option>
+                        <option value="2">02s</option>
+                        <option value="3">03s</option>
+                        <option value="4">04s</option>
+                        <option value="5">05s</option>
+                        <option value="6">06s</option>
+                        <option value="7">07s</option>
+                        <option value="8">08s</option>
+                        <option value="9">09s</option>
+                        <option value="10">10s</option>
+                        <option value="11">11s</option>
+                        <option value="12">12s</option>
+                        <option value="13">13s</option>
+                        <option value="14">14s</option>
+                        <option value="15">15s</option>
+                        <option value="16">16s</option>
+                        <option value="17">17s</option>
+                        <option value="18">18s</option>
+                        <option value="19">19s</option>
+                        <option value="20">20s</option>
+                        <option value="21">21s</option>
+                        <option value="22">22s</option>
+                        <option value="23">23s</option>
+                        <option value="24">24s</option>
+                        <option value="25">25s</option>
+                        <option value="26">26s</option>
+                        <option value="27">27s</option>
+                        <option value="28">28s</option>
+                        <option value="29">29s</option>
+                        <option value="30">30s</option>
+                        <option value="31">31s</option>
+                        <option value="32">32s</option>
+                        <option value="33">33s</option>
+                        <option value="34">34s</option>
+                        <option value="35">35s</option>
+                        <option value="36">36s</option>
+                        <option value="37">37s</option>
+                        <option value="38">38s</option>
+                        <option value="39">39s</option>
+                        <option value="40">40s</option>
+                        <option value="41">41s</option>
+                        <option value="42">42s</option>
+                        <option value="43">43s</option>
+                        <option value="44">44s</option>
+                        <option value="45">45s</option>
+                        <option value="46">46s</option>
+                        <option value="47">47s</option>
+                        <option value="48">48s</option>
+                        <option value="49">49s</option>
+                        <option value="50">50s</option>
+                        <option value="51">51s</option>
+                        <option value="52">52s</option>
+                        <option value="53">53s</option>
+                        <option value="54">54s</option>
+                        <option value="55">55s</option>
+                        <option value="56">56s</option>
+                        <option value="57">57s</option>
+                        <option value="58">58s</option>
+                        <option value="59">59s</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="button" onclick="setTimer()" value="Set!" class="buttonStyle">
+                    <br>
+                    <br>
+                    <br>
+                    Or start a predefined timer:&nbsp;&nbsp;
+                    <input type="button" onclick="setTimer(0, 25, 0)" value="25m" class="buttonStyle">
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="button" onclick="setTimer(0, 5, 0)" value="5m" class="buttonStyle">
+                    <input type="button" onclick="setTimer(0, 20, 0)" value="20m" class="buttonStyle">
+                    <br>
+
+
+                <div id="progressBar">
+                    <div id="progressBarProgress">
+                    </div>
+                    <div id="progressFont">
+                    </div>
+                </div>
+                <br><br>
+
+                <p>
+                    <input type="button" onclick="stopTimerButton()" value="Stop timer" id="stopTimer"
+                           class="buttonStyle"
+                           disabled>
+                </p>
+
+                <h1>&nbsp;</h1>
+            </div>
+            <a href="#work" class="btn btn-primary btn-xl page-scroll outline">read more</a>
+        </div>
+    </div>
+</header>
+
+<section id="work" class="no-padding">
+    <class
+    ="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                    <div class="project-category text-primary text-center">
+                        <h1><br>GNAT Not Any Timer</h1>
+                    </div>
+                    <div class="project-name box">
+                        <h2>
+                            GNAT is a project I have created solely for my own purpose and pleasure. It's a work in
+                            progress and continually serves two purposes:
+                        </h2>
+
+                        <h2>
+                            <ol>
+                                <li>as my favorite productivity tool - Pomodoro!</li>
+                                <li>as a self-invented HTML5/CSS/JS self-learning course.</li>
+                            </ol>
+                        </h2>
+
+                        <h2>
+                            There's not much more to be said about this small piece of software.
+                        </h2>
+
+                        <h2>
+                            Here's some of what I've taken from GNAT:
+                            <ul>
+                                <li>A much needed brush up on HTML, as my last encounter with HTML was sometime in the last millennium.</li>
+                                <li>A crash course in the voodoo that is CSS.</li>
+                                <li>Proof, not least to myself, that I can manage time in JS.</li>
+                                <li>A starting point in web design to redesign and rebuild my portfolio.</li>
+                            </ul>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <a href="../index.html#workDrop" class="btn btn-default btn-xl outline">Back to my work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="text-center">
+            <br>
+
+            <p class="text-muted">drasbeck.dk (<a class="text-muted" style="text-decoration: none;" target="_blank"
+                                                  href="https://creativecommons.org/licenses/by-sa/4.0/">cc by-sa</a>)
+                2015</p>
+        </div>
+        <!-- Piwik -->
+        <script type="text/javascript">
+            var _paq = _paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="//drasbeck.dk/analytics/";
+                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                _paq.push(['setSiteId', 1]);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <noscript><p><img src="//drasbeck.dk/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+        <!-- End Piwik Code -->
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="../js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../js/jquery.easing.min.js"></script>
+<script src="../js/jquery.fittext.js"></script>
+<script src="../js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../js/creative.js"></script>
+
+</body>
+
+</html>
