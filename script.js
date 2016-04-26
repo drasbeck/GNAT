@@ -10,11 +10,14 @@
  * TODO fjern unødvendig kode - hvor? bruger jeg f.eks. unixSecondsDiff?
  * TODO UX (evt. find anden måde at tage imod input (evt. -1+ -5+ knapper)).
  * TODO buzzwordery: lav siden responsiv.
- * TODO Lydfilen afspilles ikke på iOS, der er vist ikke så meget at gøre. =(
- * TODO  - Filen skal afspilles aktivt, hvilket nok ikke er muligt ifm en timer.
+ * TODO et tandhjul med indstillinger.
+ * TODO LYD
+ * TODO  - Volumen-knap under indstillinger.
+ * TODO  - Flere alarm-muligheder - drop down eller synlig liste.
+ * TODO  - Lydfilen afspilles ikke på iOS, der er vist ikke så meget at gøre. =(
+ * TODO    - Filen skal afspilles aktivt, hvilket nok ikke er muligt ifm en timer.
  * TODO Det er ikke alle browsere der er enige om hvordan <button> og <select> skal se ud.
  * TODO Skal vi ikke have et mørkt og et lyst tema?
- * TODO Der er noget galt med farverne.
  */
 
 var hotels, mikes, sierras;
@@ -24,12 +27,14 @@ var timerSet = false;
 var timerTicking = false;
 var soundAlarm = false;
 var time;
-var audio = new Audio("Connected.mp3");
+var audio = new Audio("alert.mp3");
 var timerHasRun = false;
 var unixSecondsDiffSet;
 
 document.bgColor = "#272822";
 document.getElementById("header").style.backgroundImage = "url('../img/portfolio/headerTimer.jpg')";
+
+audio.volume = 0.8;
 
 function timer() {
     // Update the timer display
