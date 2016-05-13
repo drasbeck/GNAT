@@ -43,7 +43,7 @@ var key = null;
 var oldKey = null;
 
 document.bgColor = "#272822";
-document.getElementById("header").style.backgroundImage = "url('../img/portfolio/headerTimer.jpg')";
+document.getElementById("header").style.backgroundImage = "url('./bckgrnd.jpg')";
 
 audio.volume = 0.8;
 
@@ -133,14 +133,20 @@ function timer() {
 
   // Keyboard shortcuts
   if (key != oldKey) {
+    console.log("Any modifier keys pressed?")
     if (!keys[17] && !keys[18] && !keys[91] && !keys[93]) {
+      console.log("Nope, no modifier key is currently pressed.")
       if (key == 74) { // J
+        console.log("Cool! Then 'J' goes on to activate a 25m timer.")
         setTimer(0,25,0);
       } else if (key == 75) { // K
+        console.log("Cool! Then 'J' goes on to activate a 25m timer.")
         setTimer(0,5,0);
       } else if (key == 76) { // L
+        console.log("Cool! Then 'J' goes on to activate a 25m timer.")
         setTimer(0,20,0);
       } else if (key == 72) { // H
+        console.log("Okay, well then 'H' toggles pause timer, resume timer, stop alarm.")
         stopTimerButton();
       }
       if (key != null) {
@@ -216,6 +222,7 @@ function setTimer(h, m, s) {
 document.body.addEventListener("keydown", function (e) {
   keys[e.keyCode] = true;
   key = e.keyCode;
+  console.log("keydown: " + e.key);
 });
 document.body.addEventListener("keyup", function (e) {
   keys[e.keyCode] = false;
@@ -223,4 +230,5 @@ document.body.addEventListener("keyup", function (e) {
     oldKey = null;
   }
   key = null;
+  console.log("keyup: " + e.key);
 });
