@@ -24,8 +24,7 @@
   <!-- Custom Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Varela+Round:400' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-  type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <!-- Plugin CSS -->
@@ -61,7 +60,7 @@
 
           <p>
             Set timer for:&nbsp;&nbsp;
-            <select id="hotels" class="selectStyle">
+            <select id="hotels" class="selectStyle" title="Click to choose amount of hours">
               <option value="0">00h</option>
               <option value="1">01h</option>
               <option value="2">02h</option>
@@ -87,7 +86,7 @@
               <option value="22">22h</option>
               <option value="23">23h</option>
             </select>
-            <select id="mikes" class="selectStyle">
+            <select id="mikes" class="selectStyle" title="Click to choose amount of minutes">
               <option value="0">00m</option>
               <option value="1">01m</option>
               <option value="2">02m</option>
@@ -149,7 +148,7 @@
               <option value="58">58m</option>
               <option value="59">59m</option>
             </select>
-            <select id="sierras" class="selectStyle">
+            <select id="sierras" class="selectStyle" title="Click to choose amount of seconds">
               <option value="0">00s</option>
               <option value="1">01s</option>
               <option value="2">02s</option>
@@ -210,17 +209,14 @@
               <option value="57">57s</option>
               <option value="58">58s</option>
               <option value="59">59s</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;
-            <input type="button" onclick="setTimer()" value="Set!" class="buttonStyle">
+            </select> &nbsp;&nbsp;&nbsp;
+            <input type="button" onclick="setTimer()" value="Set!" class="buttonStyle" title="Click to set timer">
             <br>
             <br>
-            <br>
-            Or start a predefined timer:&nbsp;&nbsp;
-            <input type="button" onclick="setTimer(0, 25, 0)" value="25m" class="buttonStyle">
-            &nbsp;&nbsp;&nbsp;
-            <input type="button" onclick="setTimer(0, 5, 0)" value="5m" class="buttonStyle">
-            <input type="button" onclick="setTimer(0, 20, 0)" value="20m" class="buttonStyle">
+            <br> Or start a predefined timer:&nbsp;&nbsp;
+            <input type="button" onclick="setTimer(0, 25, 0)" value="25m" class="buttonStyle" title="Hotkey: J"> &nbsp;&nbsp;&nbsp;
+            <input type="button" onclick="setTimer(0, 5, 0)" value="5m" class="buttonStyle" title="Hotkey: K">
+            <input type="button" onclick="setTimer(0, 20, 0)" value="20m" class="buttonStyle" title="Hotkey: L">
             <br>
 
 
@@ -233,14 +229,13 @@
             <br><br>
 
             <p>
-              <input type="button" onclick="stopTimerButton()" value="Stop timer" id="stopTimer"
-              class="buttonStyle"
-              disabled>
+              <input type="button" onclick="stopTimerButton()" value="Stop timer" id="stopTimer" class="buttonStyle"  title="Hotkey: H" disabled>
             </p>
 
             <h1>&nbsp;</h1>
-          </div>
-        <p class="text-muted">drasbeck.dk (<a class="text-muted" style="text-decoration: none;" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">cc by-sa</a>) 2015 - 2016</p>
+        </div>
+        <p class="text-muted">drasbeck.dk (<a class="text-muted" style="text-decoration: none;" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">cc by-sa</a>)
+          2015 - 2016</p>
       </div>
     </div>
   </header>

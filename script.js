@@ -2,7 +2,7 @@
 *    .             .                   .
 *  ,-| ,-. ,-. ,-. |-. ,-. ,-. . ,   ,-| . ,
 *  | | |   ,-| `-. | | |-' |   |/ ,. | | |/
-*  `-' '   `-^ `-' `-' `-' `-' |\ `´ `-' |\  (cc by-sa) 2015
+*  `-' '   `-^ `-' `-' `-' `-' |\ `´ `-' |\  (cc by-sa) 2015 - 2016
 *                              ' `       ' `
 */
 
@@ -20,12 +20,13 @@
 * TODO    - Filen skal afspilles aktivt, hvilket nok ikke er muligt ifm en timer.
 * TODO UI
 * TODO  - Det er ikke alle browsere der er enige om hvordan <button> og <select> skal se ud.
-* TODO  - Skal vi ikke have et mørkt og et lyst tema?
+* TODO  - Eventuelt et lyst tema?
 * TODO  - ...
-* TODO  BLANDET
+* TODO BLANDET
 * TODO  - Fjern unødvendig kode.
 * TODO    - hvor?
 * TODO    - bruger jeg f.eks. unixSecondsDiff?
+* TODO  - GNAT bruger ret meget CPU på grund af animationen i progressBar
 */
 
 var hotels, mikes, sierras;
@@ -43,7 +44,7 @@ var key = null;
 var oldKey = null;
 
 document.bgColor = "#272822";
-document.getElementById("header").style.backgroundImage = "url('./bckgrnd.jpg')";
+document.getElementById("header").style.backgroundImage = "url('./bckgrnd.png')";
 
 audio.volume = 0.8;
 
