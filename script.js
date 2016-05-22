@@ -25,8 +25,9 @@
 * TODO BLANDET
 * TODO  - Fjern unødvendig kode.
 * TODO    - hvor?
-* TODO    - bruger jeg f.eks. unixSecondsDiff?
 * TODO  - GNAT bruger ret meget CPU på grund af animationen i progressBar
+* TODO    - Animationerne er skruet ned, progressBar opdaterer kun én gang i sekundet
+* TODO    - Find ud af animationer for at få buttery smoothness tilbage på menuen.
 */
 
 var hotels, mikes, sierras;
@@ -69,11 +70,12 @@ function timer() {
       unixSecondsDiff = unixSecondsNoFloor - unixSeconds;
       unixSecondsDiffSet = true;
     }
+
+    var minutesLead, secondsLead;
+    timerSeconds = Math.floor(timerEnd - unixSecondsNoFloor + 1);
     var hours = Math.floor((timerSeconds / 3600));
     var minutes = Math.floor(((timerSeconds - (hours * 3600)) / 60));
     var seconds = Math.floor((timerSeconds - (hours * 3600) - (minutes * 60)));
-    var minutesLead, secondsLead;
-    var barProgress = timerEnd - unixSecondsNoFloor;
 
     // Pad minutes and seconds with leading zeros, if need be
     minutesLead = (minutes < 10 ? "0" : "") + minutes;
@@ -82,11 +84,7 @@ function timer() {
     // Calculating time to show in progressBar
     // Remove remaining hours and minutes, when these reach zero
     if (timerTicking) {
-      if (timerEnd - unixSeconds > 0) {
-        // Decrease timerSeconds every second
-        if (unixSeconds > unixSecondsOld) {
-          timerSeconds = timerEnd - unixSeconds;
-        }
+      if (timerEnd - unixSecondsNoFloor > 0) {
         if (hours < 1) {
           if (minutes < 1) {
             time = seconds + "s";
@@ -111,12 +109,11 @@ function timer() {
         document.getElementById("stopTimer").disabled = false;
       }
 
-
       unixSecondsOld = unixSecondsNoFloor;
 
       // Draw progress bar progress
-      if (timerEnd - unixSecondsNoFloor + unixSecondsDiff >= 0 && timerSet) {
-        drawSlider(timerAmountBar + unixSecondsDiff, barProgress);
+      if (timerEnd - unixSeconds >= 0 && timerSet) {
+        drawSlider(timerAmountBar, timerSeconds);
       } else {
         drawSlider(1, 0);
       }
@@ -125,36 +122,9 @@ function timer() {
       document.getElementById("progressText").innerHTML = time;
     }
 
-
   } else {
     if (timerHasRun) {
       document.title = "Time!";
-    }
-  }
-
-  // Keyboard shortcuts
-  if (key != oldKey) {
-    console.log("Any modifier keys pressed?")
-    if (!keys[17] && !keys[18] && !keys[91] && !keys[93]) {
-      console.log("Nope, no modifier key is currently pressed.")
-      if (key == 74) { // J
-        console.log("Cool! Then 'J' goes on to activate a 25m timer.")
-        setTimer(0,25,0);
-      } else if (key == 75) { // K
-        console.log("Cool! Then 'J' goes on to activate a 25m timer.")
-        setTimer(0,5,0);
-      } else if (key == 76) { // L
-        console.log("Cool! Then 'J' goes on to activate a 25m timer.")
-        setTimer(0,20,0);
-      } else if (key == 72) { // H
-        console.log("Okay, well then 'H' toggles pause timer, resume timer, stop alarm.")
-        stopTimerButton();
-      }
-      if (key != null) {
-        oldKey = key;
-      } else {
-        key = null;
-      }
     }
   }
 }
@@ -201,7 +171,7 @@ function drawSlider(timeTotal, timeLeft) {
   document.getElementById("progressBarProgress").style.width = progress + '%';
 }
 
-// Getting amount of seconds from timer data when timer is set
+// Getting amount of seconds from h, m, s timer data when timer is set manually
 function setTimer(h, m, s) {
   if (h != null || m != null || s != null) {
     timerSeconds = h * 60 * 60 + m * 60 + s;
@@ -212,7 +182,6 @@ function setTimer(h, m, s) {
     timerSeconds = parseInt(hotels.options[hotels.selectedIndex].text) * 60 * 60 + parseInt(mikes.options[mikes.selectedIndex].text) * 60 + parseInt(sierras.options[sierras.selectedIndex].text);
   }
   timerAmountBar = timerSeconds;
-  barProgress = timerSeconds;
   timerEnd = timerSeconds + new Date().getTime() / 1000;
   timerSet = true;
   timerTicking = true;
@@ -222,8 +191,8 @@ function setTimer(h, m, s) {
 // Key events
 document.body.addEventListener("keydown", function (e) {
   keys[e.keyCode] = true;
-  key = e.keyCode;
-  console.log("keydown: " + e.key);
+  console.log("keydown: " + e.keyCode);
+  keyPress(e.keyCode);
 });
 document.body.addEventListener("keyup", function (e) {
   keys[e.keyCode] = false;
@@ -231,5 +200,32 @@ document.body.addEventListener("keyup", function (e) {
     oldKey = null;
   }
   key = null;
-  console.log("keyup: " + e.key);
+  console.log("keyup: " + e.keyCode);
 });
+
+function keyPress(k) {
+  // Keyboard shortcuts
+  var key = k;
+    console.log("Any modifier keys pressed?")
+    if (!keys[17] && !keys[18] && !keys[91] && !keys[93]) {
+      console.log("Nope, no modifier key is currently pressed.")
+      if (key == 74) { // J
+        console.log("Cool! Then 'J' (keyCode: " + key + ") goes on to activate a 25m timer.")
+        setTimer(0,25,0);
+      } else if (key == 75) { // K
+        console.log("Cool! Then 'K' (keyCode: " + key + ") goes on to activate a 5m timer.")
+        setTimer(0,5,0);
+      } else if (key == 76) { // L
+        console.log("Cool! Then 'L' (keyCode: " + key + ") goes on to activate a 20m timer.")
+        setTimer(0,20,0);
+      } else if (key == 72) { // H
+        console.log("Okay, well then 'H' (keyCode: " + key + ") toggles pause timer, resume timer, stop alarm.")
+        stopTimerButton();
+      }
+      if (key != null) {
+        oldKey = key;
+      } else {
+        key = null;
+      }
+    }
+}
