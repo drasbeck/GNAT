@@ -122,7 +122,7 @@ function timer() {
       }
 
       // Draw time left
-      document.getElementById("progressFont").innerHTML = time;
+      document.getElementById("progressText").innerHTML = time;
     }
 
 
