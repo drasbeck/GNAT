@@ -32,7 +32,7 @@
 
 var hotels, mikes, sierras;
 var timerEnd = 0;
-var timerAmountBar, timerSeconds, unixSeconds, unixSecondsOld, unixSecondsDiff, timerPaused;
+var timerAmountBar, timerSeconds, unixSeconds, /*unixSecondsOld,*/ unixSecondsDiff, timerPaused;
 var timerSet = false;
 var timerTicking = false;
 var soundAlarm = false;
@@ -109,7 +109,7 @@ function timer() {
         document.getElementById("stopTimer").disabled = false;
       }
 
-      unixSecondsOld = unixSecondsNoFloor;
+      //unixSecondsOld = unixSecondsNoFloor;
 
       // Draw progress bar progress
       if (timerEnd - unixSeconds >= 0 && timerSet) {
