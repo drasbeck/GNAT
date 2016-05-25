@@ -13,6 +13,7 @@
 * TODO    - Hjælpeskærm, hvor tasterne kan slås op.
 * TODO buzzwordery: lav siden responsiv.
 * TODO et tandhjul med indstillinger og genvejstaster.
+* TODO man skal kunne indstille tid via adressen: gnat/5m -> starter en timer på 5 minutter
 * TODO LYD
 * TODO  - Volumen-knap under indstillinger.
 * TODO  - Flere alarm-muligheder - drop down eller synlig liste.
